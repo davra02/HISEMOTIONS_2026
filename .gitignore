@@ -1,0 +1,32 @@
+# Entorno virtual
+.venv/
+
+# Claude
+.claude/
+
+# Checkpoints y modelos entrenados (pueden ser GB)
+models/
+*.pt
+*.bin
+*.safetensors
+
+# Cache de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Notebooks ejecutados (outputs grandes, no necesarios en el repo)
+notebooks/*_executed.ipynb
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# HuggingFace cache
+.cache/

@@ -1,0 +1,24 @@
+# HISEMOTIONS @ IberLEF 2026 — Hyperparameters
+# Main model: BETO (BERT en español)
+# Alternativa: PlanTL-GOB-ES/roberta-base-bne
+
+model_name: "dccuchile/bert-base-spanish-wwm-cased"
+
+# Data
+train_path: "train/train.csv"
+dev_path: "dev/dev.csv"
+test_path: "test/test.csv"
+
+# Training
+max_length: 256
+batch_size: 16
+num_epochs: 5
+learning_rate: 2.0e-5
+dropout: 0.3
+warmup_ratio: 0.1
+weight_decay: 0.01
+num_workers: 0       # 0 = sin multiprocessing (compatible con M4 y Colab)
+
+# Output
+output_dir: "models/"
+submissions_dir: "submissions/"
