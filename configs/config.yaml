@@ -1,8 +1,8 @@
 # HISEMOTIONS @ IberLEF 2026 — Hyperparameters
-# Main model: BETO (BERT en español)
-# Alternativa: PlanTL-GOB-ES/roberta-base-bne
+# Main model: RoBERTa BNE (mejor generalización en español)
+# Alternativa: dccuchile/bert-base-spanish-wwm-cased (BETO)
 
-model_name: "dccuchile/bert-base-spanish-wwm-cased"
+model_name: "PlanTL-GOB-ES/roberta-base-bne"
 
 # Data
 train_path: "train/train.csv"

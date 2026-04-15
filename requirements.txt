@@ -1,0 +1,35 @@
+# HISEMOTIONS 2026 — Dependencias
+#
+# Instalación según hardware:
+#
+# Apple Silicon (M1/M2/M3/M4):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#
+# NVIDIA GPU (CUDA 12.8, ej. RTX 5080):
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+#
+# CPU (sin GPU):
+#   pip install torch
+#
+# Después instala el resto:
+#   pip install -r requirements.txt
+
+transformers==4.48.0
+tokenizers==0.21.4
+sentencepiece==0.2.1
+protobuf==7.34.1
+accelerate==1.13.0
+
+pandas==3.0.1
+numpy==2.4.3
+scikit-learn==1.8.0
+matplotlib==3.10.8
+seaborn==0.13.2
+
+pyyaml
+ollama==0.6.1
+
+# Jupyter
+notebook==7.5.5
+nbconvert==7.17.0
+ipykernel==7.2.0
