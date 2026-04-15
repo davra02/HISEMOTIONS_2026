@@ -40,7 +40,7 @@ def main(cfg: dict, test_path: str, output_path: str):
 
     # Load model + thresholds
     model_path = os.path.join(cfg['output_dir'], 'best_model.pt')
-    checkpoint = torch.load(model_path, map_location=device)
+    checkpoint = torch.load(model_path, map_location=device, weights_only=False)
 
     model = MultiLabelEmotionClassifier(cfg['model_name'], dropout=cfg['dropout'])
     model.load_state_dict(checkpoint['model'])
