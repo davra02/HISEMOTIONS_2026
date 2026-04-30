@@ -2,7 +2,7 @@
 # Main model: RoBERTa BNE (mejor generalización en español)
 # Alternativa: dccuchile/bert-base-spanish-wwm-cased (BETO)
 
-model_name: "PlanTL-GOB-ES/roberta-base-bne"
+model_name: "dccuchile/bert-base-spanish-wwm-cased"
 
 # Data
 train_path: "train/train.csv"

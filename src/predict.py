@@ -55,15 +55,20 @@ def main(cfg: dict, test_path: str, output_path: str):
     probs = 1 / (1 + np.exp(-logits))
     preds = (probs >= thresholds).astype(int)
 
-    result_df = test_df[['text']].copy() if 'text' in test_df.columns else test_df.copy()
-    for i, col in enumerate(EMOTION_COLS):
-        result_df[col] = preds[:, i]
+    result_df = pd.DataFrame(preds, columns=EMOTION_COLS)
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     result_df.to_csv(output_path, index=False)
     print(f"Predictions saved to {output_path}")
     print(f"Label distribution in predictions:")
     print(result_df[EMOTION_COLS].sum())
+
+    # Genera el zip listo para Codabench
+    zip_path = output_path.replace('.csv', '.zip')
+    import zipfile
+    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
+        zf.write(output_path, 'predictions.csv')
+    print(f"Submission zip: {zip_path}")
 
 
 if __name__ == '__main__':
